@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/978965789623180145/21b6206922f94ec3b7a8321d5503d9da/artifacts
+end_time: 1689669663056
+entry_point_name: ''
+experiment_id: '978965789623180145'
+lifecycle_stage: active
+run_id: 21b6206922f94ec3b7a8321d5503d9da
+run_name: Regression in balanced data2023-07-18 14:26:02.888537
+run_uuid: 21b6206922f94ec3b7a8321d5503d9da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1689669662902
+status: 3
+tags: []
+user_id: Nepal

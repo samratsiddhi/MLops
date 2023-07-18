@@ -9,7 +9,6 @@ from imblearn.over_sampling import RandomOverSampler
 from datetime import datetime
 from sklearn.metrics import  accuracy_score, precision_score, recall_score
 
-
 mlflow.set_experiment("CustomerChurn")
 
 df = pd.read_csv("data/telecom_churn.csv")

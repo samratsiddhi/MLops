@@ -6,5 +6,10 @@ COPY . .
 
 RUN pip install -r requirement.txt
 
-CMD ["python","churnpredict.py"]
+RUN python churnpredict.py
+
+ENTRYPOINT mlflow ui --host="0.0.0.0" --port="5000" 
+
+
+
 
