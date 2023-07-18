@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/978965789623180145/2c88bf86a8cb4c37b3b8fd3b7aa209ef/artifacts
+end_time: 1689584591272
+entry_point_name: ''
+experiment_id: '978965789623180145'
+lifecycle_stage: active
+run_id: 2c88bf86a8cb4c37b3b8fd3b7aa209ef
+run_name: Regression in Unbalanced data2023-07-17 14:48:00.917820
+run_uuid: 2c88bf86a8cb4c37b3b8fd3b7aa209ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1689584581059
+status: 4
+tags: []
+user_id: Nepal

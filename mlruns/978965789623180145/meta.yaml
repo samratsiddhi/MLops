@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/978965789623180145
+creation_time: 1689307626314
+experiment_id: '978965789623180145'
+last_update_time: 1689307626314
+lifecycle_stage: active
+name: CustomerChurn
