@@ -1,11 +1,24 @@
 from fastapi import FastAPI
 import uvicorn
 from pydantic import BaseModel
+import joblib
 
 app = FastAPI()
-class Employee(BaseModel):
-    name: str
-    salary: int=5000
+
+# Load the model
+model = joblib.load('model\prediction1.joblib')
+
+class Customer(BaseModel):
+    AccountWeeks: float
+    ContractRenewal: int
+    DataPlan: int
+    DataUsage: float
+    CustServCalls: int
+    DayMins: float
+    DayCalls: int
+    MonthlyCharge: float
+    OverageFee: float
+    RoamMins: float
 
 @app.get("/home")
 def home():
@@ -16,11 +29,25 @@ def home():
 def index():
     return {"response":200, "msg":"welcome"}
 
-@app.post("/insert")
-def insert(data:Employee):
-    print(data.name)
-    print(data.salary)
-    return {"response":200, "msg":"insert sucessful"}
+#function to print the churn prediction using trained model
+@app.post("/infer")
+def infer(data:Customer):
+    
+    # Convert the data to a 2D array
+    input_data = [[
+        data.AccountWeeks, data.ContractRenewal, data.DataPlan,
+        data.DataUsage, data.CustServCalls, data.DayMins,
+        data.DayCalls, data.MonthlyCharge, data.OverageFee,
+        data.RoamMins
+    ]]
+    
+    # Make predictions using the model
+    predictions = model.predict(input_data)
+    
+    if predictions[0]==1:
+        return {"Prediction":"Customer is more likely to churn"}
+    else:
+        return {"Predictions":"Customer will not churn"}
 
 if __name__=="__main__":
     uvicorn.run("app:app", host = "localhost", port = 8080, reload=True)
